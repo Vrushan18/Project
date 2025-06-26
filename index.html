@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Collector</title>
+</head>
+<body>
+  <h2>Leave your feedback</h2>
+  <input id="name" placeholder="Your name" /><br><br>
+  <textarea id="message" placeholder="Your message"></textarea><br><br>
+  <button onclick="submitFeedback()">Submit</button>
+
+  <script>
+    async function submitFeedback() {
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+
+      await fetch('https://<YOUR_CLOUD_FUNCTION_URL>', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, message })
+      });
+
+      alert('Feedback submitted!');
+    }
+  </script>
+</body>
+</html>
