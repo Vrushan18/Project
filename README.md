@@ -22,6 +22,6 @@ gcloud functions deploy collectFeedback \
 
 ## Firestore
 
-Ensure Firestore is enabled in your GCP project.
+Ensure Firestore is enabled 
 
-Replace `<YOUR_CLOUD_FUNCTION_URL>` in `index.html` with your function's public URL.
+
